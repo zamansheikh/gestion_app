@@ -456,11 +456,13 @@ class _CalenderScreenState extends State<CalenderScreen> {
                       _selectedMonth = _focusedDay.month;
                       _selectedDay = _focusedDay;
                     });
-                    getRoomDetailsByDate(
-                        start: DateUtilsx.getStartDateOfMonth(),
-                        end: DateUtilsx.getEndDateOfMonth(),
-                        roomId:
-                            "${controller.calenderModel[_selectedRoomIndex].id}");
+                    if (controller.calenderModel.isNotEmpty) {
+                      getRoomDetailsByDate(
+                          start: DateUtilsx.getStartDateOfMonth(),
+                          end: DateUtilsx.getEndDateOfMonth(),
+                          roomId:
+                              "${controller.calenderModel[_selectedRoomIndex].id}");
+                    }
                   },
                   child: Container(
                     height: 35,
